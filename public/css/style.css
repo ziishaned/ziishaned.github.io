@@ -1,0 +1,342 @@
+@import url(syntax.css);
+
+html {
+    margin: 0;
+}
+
+body {
+    color: #424242;
+    background: #fcfcfc;
+	font-family: "Roboto", "Open Sans", "Lato", Arial, sans-serif;;
+}
+
+code {
+    font-family: Monaco, Consolas, monospace;
+    font-size: 14px;
+    padding: 3px 6px;
+    background: #fcfcfc;
+    border: 1px solid #eee;
+}
+
+table {
+    width: 100%;
+    max-width: 100%;
+    border-spacing: 0;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+    background-color: transparent;
+}
+
+table>thead>tr>td, table>thead>tr>th {
+    border-bottom-width: 2px;
+}
+
+table>thead>tr>th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #ddd;
+}
+
+table>thead>tr>th {
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 1px solid #ddd;
+}
+
+th {
+    text-align: left;
+}
+
+td, th {
+    padding: 0;
+}
+
+table>tbody>tr>td, table>tbody>tr>th, table>tfoot>tr>td, table>tfoot>tr>th, table>thead>tr>td, table>thead>tr>th {
+    border: 1px solid #ddd;
+}
+
+table>tbody>tr>td, table>tbody>tr>th, table>tfoot>tr>td, table>tfoot>tr>th, table>thead>tr>td, table>thead>tr>th {
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 1px solid #ddd;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 740px;
+    padding-top: 70px;
+}
+
+.img-responsive {
+    max-width: 100%; 
+    display:block; 
+    height: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Open Sans";
+	font-weight: 500;
+    margin-bottom: 18px;
+    font-size: 22px;
+}
+
+b, strong {
+    font-weight: bolder
+}
+
+a {
+    text-decoration: none;
+    color: #1abc9c;
+}
+
+header, nav, section, main, article, aside, figure, footer, iframe, object, svg {
+    display: block;
+    margin: 0;
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+.clearfix {
+    clear: both;
+}
+
+/* Post */
+
+.post .post-content {
+    font-size: 16px;
+    line-height: 27px;
+    margin-bottom: 50px;
+}
+
+.post .post-content pre {
+    background-color: #272822;
+    padding: 18px 30px;
+    margin: 0;
+    font-size: 14px;
+    overflow-x: auto;
+    color: #fff;
+    border-radius: 3px;
+}
+
+.post .post-content pre strong {
+    color: #fff;
+}
+
+.post {
+	position: relative;
+    margin: 40px 0 0;
+    padding: 40px 40px;
+    border: 1px solid #eee;
+    background: #fff;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.05);
+}
+
+.post-header {
+	margin-bottom: 36px;
+}
+
+.post-header time {
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    color: #aaa;
+}
+
+.post .post-header h2 {
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0 0 6px;
+    color: #333;
+}
+
+.post .post-content h1 {
+    font-size: 30px;
+}
+
+.post .post-content h2 {
+    font-size: 26px;
+}
+
+.post .post-content h3 {
+    font-size: 22px;
+}
+
+.post .post-content h4 {
+    font-size: 20px;
+}
+
+.post .post-content h5 {
+    font-size: 18px;
+}
+
+.post .post-content h6 {
+    font-size: 16px;
+}
+
+.post .post-content strong {
+    color: #333;
+}
+
+.post .post-content dl {
+    margin: 40px 0;
+}
+
+.post .post-content dl dt {
+    margin: 10px 0 0;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.post .post-content dl dd {
+    margin: 5px 0;
+}
+
+.post .post-content figcaption {
+    color: #aaa;
+    font-size: 13px;
+    font-style: italic;
+    padding-top: 10px;
+}
+
+.post .post-content a {
+    color: #1abc9c;
+}
+
+.post .post-content a:hover {
+    text-decoration: underline;
+}
+
+.post .post-content ul, .post .post-content ol {
+    margin: 15px 0;
+}
+
+.post .post-content ul ul {
+    margin: 0;
+}
+
+.post .post-content strong {
+    color: #333;
+}
+
+.post .post-content h5 {
+    font-size: 18px;
+}
+
+.post .post-content h1, .post .post-content h2, .post .post-content h3, .post .post-content h4, .post .post-content h5, .post .post-content h6 {
+    margin-top: 34px;
+    color: #333;
+}
+
+/* End Post*/
+
+/* User Profille */
+
+.user-profile {
+    text-align: center;
+}
+
+.user-profile .avatar {
+    border-radius: 50%;
+}
+
+.user-profile .name {
+    font-size: 39px;
+    font-weight: 800;
+    color: #424242;
+    margin: 8px 0px 0px;
+    text-transform: uppercase;
+}
+
+.user-profile .about-me {
+    font-size: 16px;
+    margin: 5px 0 0;
+}
+
+/* End User Profile */
+
+.archive {
+    position: relative;
+    margin: 40px 0 0;
+    padding: 22px 40px;
+    border: 1px solid #eee;
+    background: #fff;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.05);
+}
+
+.archive .posts {
+    padding: 0;
+}
+
+.archive .posts .article-list-item {
+    list-style: none;
+    padding-bottom: 22px;
+}
+
+.archive .posts .article-list-item:last-child {
+    padding-bottom: 0;
+}
+
+.archive .posts .article-list-item a {
+    font-size: 16px;
+    color: #1abc9c;
+    font-weight: 500;
+}
+
+.archive .posts .article-list-item .date { 
+    float: right;
+    font-size: 14px;
+    color: #999;
+    text-transform: uppercase;
+}
+
+.pagination {
+    padding: 20px 0;
+    padding-bottom: 48px;
+    border-bottom: 1px solid #eee;
+}
+
+nav {
+    position: absolute;
+    right: 25px;
+    top: 8px;
+}
+
+nav ul li {
+    list-style: none;
+    display: inline-block;
+
+}
+
+nav ul li a {
+    color: #B0BED1;
+    margin-right: 32px;
+    font-size: 14px;
+}
+
+nav ul li a:hover {
+    color: #1abc9c;
+}
+
+footer {
+    padding: 15px 0px;
+}
+
+footer .copyright {
+    color: #999;
+    font-size: 14px;
+}
+
+blockquote {
+    margin: 40px 0;
+    padding-left: 30px;
+    font-style: italic;
+    border-left: 3px solid #aaa;
+}
