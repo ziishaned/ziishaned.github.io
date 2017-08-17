@@ -1,5 +1,5 @@
 # Permalinks
-permalink:        {{ site.baseurl }}
+permalink:        pretty
 
 # Setup
 title:            '@ziishaned'
