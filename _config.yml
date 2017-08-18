@@ -6,7 +6,7 @@ title:            '@ziishaned'
 tagline:          PHP and Javascript fanatic, open source lover and tinkerer.
 url:              http://zeeshanu.github.io
 paginate:         1
-baseurl:          /
+baseurl:          ""
 author:
   name:           Zeeshan Ahmed
   url:            http://zeeshanu.github.io
