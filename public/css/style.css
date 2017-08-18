@@ -18,6 +18,17 @@ code {
     border: 1px solid #eee;
 }
 
+form, input, textarea, select {
+    font: 400 16px/16px 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    resize: none;
+}
+
+input {
+    outline: none;
+}
+
 table {
     width: 100%;
     max-width: 100%;
@@ -264,7 +275,7 @@ header, nav, section, main, article, aside, figure, footer, iframe, object, svg 
 
 .archive {
     position: relative;
-    margin: 40px 0 0;
+    margin: 20px 0 0;
     padding: 22px 40px;
     border: 1px solid #eee;
     background: #fff;
@@ -339,4 +350,131 @@ blockquote {
     padding-left: 30px;
     font-style: italic;
     border-left: 3px solid #aaa;
+}
+
+.search {
+    position: relative;
+    margin: 20px 0;
+    border: 1px solid #eee;
+    background: #fff;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.05),inset 6px 0 0 #eee;
+}
+
+.search ::-webkit-input-placeholder {
+    color: #ddd;
+    font-size: 16px;
+    font-style: italic;
+}
+
+.search :-moz-placeholder {
+    color: #ddd;
+    opacity: 1;
+    font-size: 16px;
+    font-style: italic;
+}
+
+.search ::-moz-placeholder {
+    color: #ddd;
+    opacity: 1;
+    font-size: 16px;
+    font-style: italic;
+}
+
+.search :-ms-input-placeholder {
+    color: #ddd;
+    font-size: 16px;
+    font-style: italic;
+}
+
+.search>div {
+    overflow: hidden;
+}
+
+.search>div .show-results-count {
+    float: left;
+    margin-left: -46%;
+    padding: 0 20px;
+    min-height: 55px;
+    line-height: 55px;
+    color: #ddd;
+    background: #fff;
+    letter-spacing: 0.05em;
+    font-size: 11px;
+    text-transform: uppercase;
+    box-shadow: 6px 0 0 0 #eee;
+    transition: all .2s linear;
+    -moz-transition: all .2s linear;
+    -webkit-transition: all .2s linear;
+    -o-transition: all .2s linear;
+}
+
+.search>div .show-results-count.active {
+    margin-left: 0 !important;
+}
+
+.search>div .search-holder {
+    float: left;
+    width: 60%;
+    margin: 0 0 0 34px;
+    background: url(../img/search-icon.svg) no-repeat left center;
+    -webkit-background-size: 15px 16px;
+    -moz-background-size: 15px 16px;
+    -o-background-size: 15px 16px;
+    background-size: 15px 16px;
+    padding: 0 0 0 25px;
+}
+
+.search>div .search-holder input {
+    float: left;
+    width: 100%;
+    min-height: 55px;
+    line-height: 22px;
+    background: none;
+    border: none;
+}
+
+.search .results-container {
+    position: absolute;
+    left: -1px;
+    width: calc(100% + 2px);
+    padding: 1px;
+    box-shadow: inset 0 0 0 1px #eee,0 7px 10px rgba(0,0,0,0.05);
+    z-index: 1000;
+    margin: 0;
+}
+
+.search .results-container li {
+    font-size: 15px;
+}
+
+.search .results-container li a {
+    position: relative;
+    display: block;
+    padding: 15px 15px 15px 35px;
+    background: #fcfcfc;
+    box-shadow: 0 -1px 0 #eee;
+}
+
+.search .results-container li a:before {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    background: #666;
+    content: "";
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    -webkit-transform: translate(0, -50%);
+    -moz-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    -o-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+}
+
+.search .results-container li a:hover {
+    background: #fff
+}
+
+.search .results-container li {
+    list-style: none;
 }

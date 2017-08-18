@@ -27,9 +27,9 @@ pages_list:
 
 # Stay in touch
 external_links:
-  'github.com/zeeshanu': 'http://github.com/zeeshanu'
-  'ziishaned@gmail.com': 'mailto:ziishaned@gmail.com'
-  'pk.linkedin.com/in/zeshanu': 'http://pk.linkedin.com/in/zeshanu'
+  github: 'http://github.com/zeeshanu'
+  mail: 'mailto:ziishaned@gmail.com'
+  linkedin: 'http://pk.linkedin.com/in/zeshanu'
 
 plugins:          [jekyll-paginate, rouge]
 paginate:         10
