@@ -10,7 +10,7 @@ body {
 	font-family: "Roboto", "Open Sans", "Lato", Arial, sans-serif;;
 }
 
-code {
+p code {
     font-family: Monaco, Consolas, monospace;
     font-size: 14px;
     padding: 3px 6px;
@@ -76,7 +76,7 @@ table>tbody>tr>td, table>tbody>tr>th, table>tfoot>tr>td, table>tfoot>tr>th, tabl
 
 .container {
     margin: 0 auto;
-    max-width: 740px;
+    max-width: 800px;
     padding-top: 70px;
 }
 
@@ -128,12 +128,8 @@ header, nav, section, main, article, aside, figure, footer, iframe, object, svg 
 }
 
 .post .post-content pre {
-    background-color: #272822;
-    padding: 18px 30px;
-    margin: 0;
-    font-size: 14px;
+    font-size: 13px;
     overflow-x: auto;
-    color: #fff;
     border-radius: 3px;
 }
 
