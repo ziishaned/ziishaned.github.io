@@ -1,6 +1,7 @@
 ---
 layout: post
 title: JWT authentication for Lumen 5.4
+comments: true
 ---
 
 Recently I have been developing an angular project so I had to create an API to interact with. I choose [Lumen](https://github.com/laravel/lumen) because it is fast and mostly used to develop APIs. Here is how I implemented it to authenticate a user using [JWT](https://jwt.io/introduction/) authenticate. I hope you are excited so lets get started.
