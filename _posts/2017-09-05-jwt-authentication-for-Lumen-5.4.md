@@ -4,22 +4,24 @@ title: JWT authentication for Lumen 5.4
 comments: true
 ---
 
-Recently I have been developing an angular project so I had to create an API to interact with. I choose [Lumen](https://github.com/laravel/lumen) because it is fast and mostly used to develop APIs. Here is how I implemented it to authenticate a user using [JWT](https://jwt.io/introduction/) authenticate. I hope you are excited so lets get started.
+Recently I have been tinkering with Angular-4 to get a taste of it and I decided to create a quick project to get my hands dirty. I decided to create a blog with authentication etc. My main focus was on the frontend so I decided to quickly bootstrap an application in Lumen because of its simplicity and almost zero-configuration development. For the authentication, I decided to go with JWT and this post is going to be a quick write-up on how I integrated that and how anyone can integrate JWT authentication in their APIs. Firstly if you are not aware of what JWT Authentication is, I would suggest you to go through [this nice little article]() to get the idea.
 
-Open up your terminal and run the following command to create a fresh copy of lumen project on your desktop:
+I hope you are excited so lets get started.
+
+First things first, let's create an empty lumen project. Open up your terminal and run the following command to create a fresh copy of lumen project on your desktop:
 
 ```bash
 composer create-project --prefer-dist laravel/lumen lumen-jwt
 ```
 
-Now we need to create `.env` file inside our project root directory. `.env` is over project configuration file. For that we need to run the following commands to create it:
+Now we need to create the configuration file i.e. `.env` at the root of directory. Create it by simply copying the content of `.env.example` to `.env`:
 
 ```bash 
 cd lumen-jwt
 cp .env.example .env
 ``` 
 
-After that open the `lumen-jwt` folder in your code editor and put the following contents inside `.env` file and also update your database configuration:
+Now lets set a few configuration values in our `.env` file. Open this lumen project in your favorite code editor or IDE and put the below in the `.env` ile:
 
 ```
 APP_ENV=local
@@ -38,7 +40,7 @@ CACHE_DRIVER=file
 JWT_SECRET=JhbGciOiJIUzI1N0eXAiOiJKV1QiLC
 ```
 
-> **Note:** Remember to set the `APP_KEY` and `JWT_SECRET` to your own. Set them to any meaningless string.
+> **Note:** Remember to set the `APP_KEY` and `JWT_SECRET` to your own.
 
 Create a migration file for the users table:
 
@@ -46,7 +48,7 @@ Create a migration file for the users table:
 php artisan make:migration create_users_table
 ```
 
-Modify the created file `(for me that was database/migrations/2017_09_05_115448_create_users_table.php)` to look like this:
+Modify the migration file created inside the `database/migrations` directory to have `name`, `email` and `password` fields. For me the file is `database/migrations/2017_09_05_115448_create_users_table.php`:
 
 ```php
 <?php
@@ -85,7 +87,7 @@ class CreateUsersTable extends Migration
 }
 ```
 
-Modify `database/factories/ModelFactory.php` to look like this:
+Now let's define some factory methods that will help us in populating some seed data in the database. Open the file `database/factories/ModelFactory.php`  and modify it to look like below:
 
 ```php
 <?php
@@ -110,7 +112,7 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 });
 ```
 
-To create the seeder (it will populate your database with some users), modify `database/seeds/UsersTableSeeder.php` to look like:
+Now let's create the seeder to populate database with some users. Mmodify `database/seeds/UsersTableSeeder.php` to look like:
 
 ```php
 <?php
@@ -126,18 +128,13 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
+        // create 10 users using the user factory
         factory(App\User::class, 10)->create();
     }
 }
 ```
 
-> **Important**: You must now recreate the autoloader (Lumen still doesn’t know about the UsersTableSeeder class):
-
-```bash
-composer dump-autoload
-```
-
-Modify `database/seeds/DatabaseSeeder.php` to look like this:
+Now let's register this user seeder in our database seeders. Modify `database/seeds/DatabaseSeeder.php` to look like this:
 
 ```php
 <?php
@@ -156,6 +153,7 @@ class DatabaseSeeder extends Seeder
     {
         Model::unguard();
 
+        // Register the user seeder
         $this->call(UsersTableSeeder::class);
 
         Model::reguard();
@@ -163,39 +161,42 @@ class DatabaseSeeder extends Seeder
 }
 ```
 
-Create database and run the following commands inside your terminal:
+Now create the configured database in MySQL and run the following commands inside your terminal to create the users table and add some dummy data respectively:
 
 ```bash
 php artisan migrate
 php artisan db:seed
 ```
 
-Now lets open the `bootstrap/app.php` file and uncomment the following lines:
+If you run into any errors, run the below to make sure that composer knows about these newly created classes
+
+```
+composer dump-autoload
+```
+
+Lumen does not have facades and eloquent enabled by default, let's enable them first by opening the `bootstrap/app.php` file and uncommenting the following lines:
 
 ```php?start_inline=1
 $app->withFacades();
 $app->withEloquent();
 ```
 
-To generate and validate jwt token we need to pull a new library `firebase/php-jwt` using composer. So, open up your terminal and run the following command:
+Now let's create the endpoint to generate JWT token. There are tons of libraries out there that will help you with it we will use the one called `firebase/php-jwt`. Open up your terminal and run the following command to pull it in using composer:
 
 ```bash
 composer require firebase/php-jwt
 ```
 
-Create following routes inside `routes/web.php` file:
+Now let's add the endpoint `POST /auth/login` that will accept the credentials and return a token for us. Let's register the route first by adding the following route inside `routes/web.php` file:
 
 ```php
 <?php
-
-$app->get('', function () use ($app) {
-    return $app->version();
-});
-
 $app->post('auth/login', ['uses' => 'AuthController@authenticate']);
 ```
 
-Inside `app/Http/Controllers` folder create a new `AuthController.php` file and put follwoing content inside it:
+Now we need the controller `AuthController` with method `authenticate`. Inside `app/Http/Controllers` folder create a new `AuthController.php` file and put follwoing content inside it:
+
+> In a production ready application you will probably have models and helper methods to achieve this but for the sake of brevity let's put everything inside the controller.
 
 ```php
 <?php
@@ -243,10 +244,8 @@ class AuthController extends BaseController
             'exp' => time() + 60*60 // Expiration time
         ];
         
-        /*
-        | As you can see we passes `JWT_SECRET` as the second parameter that will 
-        | be used to decode the token in the feature.
-        */
+        // As you can see we are passing `JWT_SECRET` as the second parameter that will 
+        // be used to decode the token in the future.
         return JWT::encode($payload, env('JWT_SECRET'));
     } 
 
@@ -262,28 +261,35 @@ class AuthController extends BaseController
             'password'  => 'required'
         ]);
 
+        // Find the user by email
         $user = User::where('email', $this->request->input('email'))->first();
 
         if (!$user) {
+            // You wil probably have some sort of helpers or whatever
+            // to make sure that you have the same response format for
+            // differents kind of responses. But let's return the 
+            // below respose for now.
             return response()->json([
                 'error' => 'Email does not exist.'
-            ], 401);
+            ], 400);
         }
 
+        // Verify the password and generate the token
         if (Hash::check($this->request->input('password'), $user->password)) {
             return response()->json([
                 'token' => $this->jwt($user)
             ], 200);
         }
 
+        // Bad Request response
         return response()->json([
             'error' => 'Email or password is wrong.'
-        ], 401);
+        ], 400);
     }
 }
 ```
 
-Lets open up your terminal and test our authenticate route by seding a post request and check if we are getting token in response.
+Lets open up your terminal and test our authenticate route by sending a post request and check if we are getting token in response.
 
 ```bash
 curl -X POST -F 'email=ziishaned@gmail.com' -F 'password=admin' http://localhost:8080/auth/login
@@ -297,7 +303,7 @@ After hitting the route you will get something like following result in response
 }
 ```
 
-Lets create a middleware `JwtMiddleware` inside `app/Http/Middleware` folder that will validates provided token  and put the following content inside it.
+Now we need a middleware to protect our routes. Lets create a middleware `JwtMiddleware` inside `app/Http/Middleware` folder that will validate provided token  and put the following content inside it.
 
 ```php
 <?php
@@ -317,6 +323,7 @@ class JwtMiddleware
         $token = $request->get('token');
         
         if(!$token) {
+            // Unauthorized response if token not there
             return response()->json([
                 'error' => 'Token not provided.'
             ], 401);
@@ -336,10 +343,7 @@ class JwtMiddleware
 
         $user = User::find($credentials->sub);
 
-        /*
-        | Because of this you can get the current authenticated user 
-        | using \Illuminate\Http\Request class.
-        */
+        // Now let's put the user in the request class so that you can grab it from there
         $request->auth = $user;
 
         return $next($request);
@@ -355,7 +359,7 @@ $app->routeMiddleware([
 ]);
 ```
 
-After that open `routes/web.php` file and put the following routes inside it:
+Now let's protect some of our routes. Open the routes file i.e. `routes/web.php` and put the following routes inside it:
 
 ```php?start_inline=1
 $app->group(['middleware' => 'jwt.auth'], function() use ($app) {
@@ -366,7 +370,7 @@ $app->group(['middleware' => 'jwt.auth'], function() use ($app) {
 });
 ```
 
-Lets open up your terminal and test if our request proceded by hitting users route. Run the following command inside your terminal:
+Lets open up your terminal and test if our request succeeds by hitting users route. Run the following command inside your terminal:
 
 ```bash
 curl -X GET http://localhost:8080/users
@@ -380,7 +384,7 @@ curl -X GET http://localhost:8080/users
 }
 ```
 
-Now lets make an other request to users route on which we implemented `jwt.auth` middleware and this time put the token that you will get by hitting authenticate route. Run the following commands inside your terminal:
+Now lets make another request to users route on which we implemented `jwt.auth` middleware and this time lets put the token that you will get by hitting authenticate route. Run the following commands inside your terminal:
 
 ```bash
 curl -X POST -F 'email=ziishaned@gmail.com' -F 'password=admin' http://localhost:8080/auth/login
@@ -405,3 +409,5 @@ curl -X GET 'http://localhost:8080/api/v1/users?token=tokenFromFirstRequest'
     }
 ]
 ```
+
+And that about wraps it up. If you have any questions feel free to leave your comments below.
