@@ -58,7 +58,6 @@ DEPENDENCIES
   jekyll (= 3.5.2)
   jekyll-feed (~> 0.6)
   jekyll-paginate
-  kramdown
   minima (~> 2.0)
   rouge
   tzinfo-data
