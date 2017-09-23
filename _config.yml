@@ -1,25 +1,34 @@
-title: Your awesome title
-email: your-email@example.com
-description: >
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: /
-twitter_username: jekyllrb
-github_username:  jekyll
+# Permalinks
+permalink:        pretty
+
+# Setup
+title:            '@ziishaned'
+tagline:          PHP and Javascript fanatic, open source lover and tinkerer.
+url:              http://zeeshanu.github.io
+baseurl:          /
+author:
+  name:           Zeeshan Ahmed
+  url:            http://zeeshanu.github.io
+  email:          ziishaned@gmail.com
+  github:         http://github.com/zeeshanu
+  description:    'I am Zeeshan Ahmed, a full stack web developer.'
+
+# Custom vars
+version:          0.0.1
+github:
+  repo:           https://github.com/zeeshanu/zeeshanu.github.io
+
+# Stay in touch
+external_links:
+  github: 'http://github.com/zeeshanu'
+  mail: 'mailto:ziishaned@gmail.com'
+  linkedin: 'http://pk.linkedin.com/in/zeshanu'
 
 markdown: kramdown
 
 kramdown:
   input: GFM
   syntax_highlighter: rouge
-
-plugins:
-  - jekyll-feed
-  - jekyll-paginate
-  - jemoji
-
-paginate: 5
 
 sass:
     style: compressed
