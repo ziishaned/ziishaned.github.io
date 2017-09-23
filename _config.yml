@@ -1,37 +1,25 @@
-# Permalinks
-permalink:        pretty
+title: Your awesome title
+email: your-email@example.com
+description: >
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+baseurl: /
+twitter_username: jekyllrb
+github_username:  jekyll
 
-# Setup
-title:            '@ziishaned'
-tagline:          PHP and Javascript fanatic, open source lover and tinkerer.
-url:              http://zeeshanu.github.io
-paginate:         1
-baseurl:          ""
-author:
-  name:           Zeeshan Ahmed
-  url:            http://zeeshanu.github.io
-  email:          ziishaned@gmail.com
-  github:         http://github.com/zeeshanu
-  description:    'I am Zeeshan Ahmed, a full stack web developer.'
+markdown: kramdown
 
-# Custom vars
-version:          0.0.1
-github:
-  repo:           https://github.com/zeeshanu/zeeshanu.github.io
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 
-# Menu
-pages_list:       
-  Archive: '/archive'
-  About: '/about'
-  Feed: '/atom.xml'
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+  - jemoji
 
-# Stay in touch
-external_links:
-  github: 'http://github.com/zeeshanu'
-  mail: 'mailto:ziishaned@gmail.com'
-  linkedin: 'http://pk.linkedin.com/in/zeshanu'
+paginate: 5
 
-plugins:          [jekyll-paginate, rouge]
-paginate:         10
-paginate_path: "/blog/page:num"
-highlighter: rouge
+sass:
+    style: compressed

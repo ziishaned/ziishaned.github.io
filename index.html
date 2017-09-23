@@ -1,36 +1,15 @@
+--- 
+  layout: default 
+  title: Home 
 ---
-layout: default
-title: Home
----
 
-{% include nav.html %}
-
-<div class="user-profile">
-    {% include user_profile.html %}
-</div>
-
-{% include search.html %}
-
-<div class="archive">
-    <ul class="posts">
-        {% for post in paginator.posts %}
-            <li class="article-list-item">
-                <a href="{{ post.url }}">{{ post.title }}</a>
-                <span class="date">{{ post.date | date_to_string }}</span>
-            </li>
-        {% endfor %}
-    </ul>
-    {% if paginator.total_pages > 1 %}
-    <div class="pagination">
-	  	{% if paginator.previous_page %}
-	   	 	<a href="{{ paginator.previous_page_path }}" class="btn-prev pull-left">&larr; Previous</a>
-	  	{% endif %}
-	  	{% if paginator.next_page %}
-	    	<a href="{{ paginator.next_page_path }}" class="btn-nxt pull-right">Next &rarr;</a>
-	  	{% endif %}
-	  	<div class="clearfix"></div>
-	</div>
-    {% endif %}
-</div>
-
-{% include footer.html %}
+<section class="post-list">
+  <div class="row">
+    {% for post in site.posts %}
+      <div class="col-xs-12 col-sm-12 col-lg-12 post-line">
+        <span class="post-titles"><a href="{{ post.url }}"><h1>{{ post.title }}</h1></a></span>
+        <time class="dates">{{ post.date | date_to_string }}</time>
+      </div>
+    {% endfor %}
+  </div>
+</section>

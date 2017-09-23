@@ -2,17 +2,13 @@
 layout: default
 ---
 
-{% include nav.html %}
-
-<article class="post" role="article">
-    <header class="post-header">
-        <h2>{{ page.title }}</h2>
-        <time>Posted on {{ page.date | date: "%-d %B %Y" }}</time>
-    </header>
-    <div class="post-content">
-        {{ page.content }}
-    </div>
+<section class="post-list post-content">
+  <div class="post-data">
+    <h1 class="post-page-title">{{ page.title }}</h1>
+    <p class="post-meta-data">{{ page.date | date_to_string }}</p>
+    {{ content }}
+  </div>
+</section>
+<section class="comments-list">
 	{% include comments.html %}
-</article>
-
-{% include footer.html %}
+</section>
