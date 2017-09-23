@@ -5,7 +5,7 @@ permalink:        pretty
 title:            '@ziishaned'
 tagline:          PHP and Javascript fanatic, open source lover and tinkerer.
 url:              http://zeeshanu.github.io
-baseurl:          ""
+baseurl:          /
 author:
   name:           Zeeshan Ahmed
   url:            http://zeeshanu.github.io
