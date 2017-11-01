@@ -470,3 +470,7 @@ pre {
     border: none !important;
     vertical-align: baseline;
 }
+
+pre code {
+    white-space: pre;
+}
