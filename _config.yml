@@ -1,0 +1,67 @@
+title: Zeeshan Ahmed
+description: "Software engineer at tajawal — tech guy with an entrepreneurial spirit and knack for getting things done"
+url: "http://zeeshanu.info"
+author: "Zeeshan Ahmad"
+keywords: "zeeshan,zeeshanahmadse,zeeshan ahmad,code,javascript,php,databases,entrepreneurship,startups,react,angular,javascript"
+github: zeeshanu
+medium: zeeshanu
+twitter: ziishaned
+email: ziishaned@gmail.com
+
+exclude: ["README.md", "CNAME", "LICENSE", ".gitignore"]
+include: ["résumé.pdf"]
+
+permalink: pretty
+
+gems: []
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+sass:
+  style: compressed
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "base"
+
+featured:
+  - id: 1
+    title: Journey to HTTP/2
+    date: 2016-08-13 12:30:00
+    type: light
+    url: /blog/2016/08/13/http-in-depth/
+  - id: 2
+    title: Web Cache in Depth
+    date: 2017-03-14 11:50:00
+    type: light
+    url: /blog/2017/03/14/quick-guide-to-http-caching/
+
+about:
+  - name: Github
+    username: zeeshanu
+    url: https://github.com/zeeshanu
+    class: github
+  - name: Medium
+    username: zeeshanu
+    url: https://medium.com/@zeeshanu
+    class: medium
+  - name: Twitter
+    username: ziishaned
+    url: https://twitter.com/ziishaned
+    class: twitter
+  - name: Email
+    username: ziishaned@gmail.com
+    class: email
+    url: mailto:ziishaned@gmail.com
