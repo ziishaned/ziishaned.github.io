@@ -26,11 +26,16 @@ p, li {
   margin: 1rem 0;
   background: $background;
   line-height: 123%;
+  border-radius: 3px;
+
+  code {
+    font-size: 0.85em !important;
+  }
 }
 
 pre {
   margin: 0;
-  padding: 12px 8px;
+  padding: 20px;
 
   pre {
     padding-top: 0;
@@ -82,7 +87,7 @@ pre {
 .highlight .nn { color: $operator; } /* name.namespace */ 
 .highlight .nt { background-color: rgba(27,154,247,.05); border-radius: 2px; color: $name; } /* name.tag */
 .highlight .nv { color: $operator; } /* name.variable */
-.highlight .nx { background-color: rgba(237,70,148,.05); border-radius: 2px; color: $operator; } /* name.other */
+.highlight .nx { /*background-color: rgba(237,70,148,.05);*/ border-radius: 2px; color: $operator; } /* name.other */
 .highlight .ow { color: $operator; } /* operator.word */
 .highlight .w { color: $comment; } /* text.whitespace */
 .highlight .mf { color: $keyword; } /* literal.number.float */
