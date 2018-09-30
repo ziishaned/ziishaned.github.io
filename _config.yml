@@ -2,9 +2,9 @@ title: Zeeshan Ahmad
 description: "Software engineer at tajawal — tech guy with an entrepreneurial spirit and knack for getting things done"
 url: "http://zeeshanu.info"
 author: "Zeeshan Ahmad"
-keywords: "zeeshan,zeeshanahmadse,zeeshan ahmad,code,javascript,php,databases,entrepreneurship,startups,react,angular,javascript"
-github: zeeshanu
-medium: zeeshanu
+keywords: "zeeshan,zeeshanahmadse,zeeshan ahmad,code,javascript,php,databases,entrepreneurship,startups,react,angular,javascript,docker,nodejs,laravel,lumen"
+github: ziishaned
+medium: ziishaned
 twitter: ziishaned
 email: ziishaned@gmail.com
 
@@ -50,12 +50,12 @@ featured:
 
 about:
   - name: Github
-    username: zeeshanu
-    url: https://github.com/zeeshanu
+    username: ziishaned
+    url: https://github.com/ziishaned
     class: github
   - name: Medium
-    username: zeeshanu
-    url: https://medium.com/@zeeshanu
+    username: ziishaned
+    url: https://medium.com/@ziishaned
     class: medium
   - name: Twitter
     username: ziishaned
