@@ -9,7 +9,6 @@ $class: #7b72e9;
 
 
 code {
-  font-size: 15px;
   background-color: $background;
   border: 1px solid $gray-light;
   font-family: $mono;
@@ -18,8 +17,7 @@ code {
 
 p, li {
   code {
-    font-size: inherit;
-    padding: 0 3px;
+    padding: 1px 5px;
     white-space: nowrap;
   }
 }
