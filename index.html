@@ -3,8 +3,7 @@
 
 <header class="intro mar-tb-7">
     <h1 class="intro__head">Zeeshan Ahmad
-        <div class="intro__sub">{{ site.description }}
-        </div>
+        <div class="intro__sub">{{ site.description }}</div>
     </h1>
 </header>
 
@@ -28,21 +27,21 @@
 {% include mailchimp.html %}
 {% endif %}
 <section id="y{{post.date | date: " %Y"}}" class="mar-b-7">
-<h3 class="section__title">{{ currentdate }}</h3>
-<div class="post-list">
-    {% assign date = currentdate %}
-    {% endif %}
-    {% if post.type != 'link' %}
+    <h3 class="section__title">{{ currentdate }}</h3>
+    <div class="post-list">
+        {% assign date = currentdate %}
+        {% endif %}
+        {% if post.type != 'link' %}
         <a class="post" href="{{ post.url | prepend: site.baseurl }}">
-    {% endif %}
-    {% if post.type == 'link' %}
-        <a target="_blank" class="post" href="{{ post.external_url }}">
-    {% endif %}
-        <span class="post__title">{{ post.title }}</span>
-        <time class="post__date" datetime="{{ post.date | date: " %Y-%m-%d" }}">{{ post.date | date: "%b %d" }}</time>
-    </a>
-    {% if forloop.last %}
-</div>
+            {% endif %}
+            {% if post.type == 'link' %}
+            <a target="_blank" class="post" href="{{ post.external_url }}">
+                {% endif %}
+                <span class="post__title">{{ post.title }}</span>
+                <time class="post__date" datetime="{{ post.date | date: " %Y-%m-%d" }}">{{ post.date | date: "%b %d" }}</time>
+            </a>
+            {% if forloop.last %}
+    </div>
 </section>
 {% endif %}
 {% endfor %}
