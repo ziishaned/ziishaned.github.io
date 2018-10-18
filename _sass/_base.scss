@@ -50,6 +50,10 @@ hr {
   }
 }
 
+b, strong {
+  font-weight: 400;
+}
+
 blockquote {
   margin: 3rem 0;
   padding-left: 15px;
@@ -225,15 +229,14 @@ footer {
 
   &__head {
     margin: 0;
-    font-size: 1.35rem;
-    font-family: sans-serif;
+    font-size: 1.15rem;
     font-weight: 500;
   }
 
   &__description {
     color: $gray;
     margin: .5rem 0;
-    font-size: 1.25rem;
+    font-size: 1.09rem;
   }
 }
 
@@ -243,7 +246,7 @@ footer {
   border-bottom: 1px solid $gray-light;
   color: $green;
   font-size: 1.15rem;
-  font-weight: 700;
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -332,7 +335,6 @@ footer {
 
   &__date {
     color: $gray;
-    font-size: .8rem;
   }
 }
 
