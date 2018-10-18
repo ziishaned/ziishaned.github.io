@@ -9,6 +9,7 @@ $class: #7b72e9;
 
 
 code {
+  font-size: 15px;
   background-color: $background;
   color: $red;
   font-family: $mono;
@@ -17,6 +18,7 @@ code {
 
 p, li {
   code {
+    font-size: inherit;
     padding: 0 3px;
     white-space: nowrap;
   }
@@ -30,7 +32,8 @@ p, li {
 
 pre {
   margin: 0;
-  padding: 12px 8px;
+  padding: 8px 12px;
+  overflow-x: auto;
 
   pre {
     padding-top: 0;
