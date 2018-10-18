@@ -11,7 +11,7 @@ $class: #7b72e9;
 code {
   font-size: 15px;
   background-color: $background;
-  color: $red;
+  border: 1px solid $gray-light;
   font-family: $mono;
   letter-spacing: 1px;
 }
