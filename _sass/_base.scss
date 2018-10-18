@@ -52,12 +52,13 @@ hr {
 
 blockquote {
   margin: 3rem 0;
+  padding-left: 15px;
+  border-left: 4px solid #e8e8e8;
 
   p {
-    color: $blue;
-    font: 300 1.5rem $sans;
+    font-style: italic;
+    color: #828282;
     line-height: 1.7;
-    text-align: center;
   }
 }
 
