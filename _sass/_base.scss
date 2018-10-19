@@ -5,24 +5,23 @@
 
 body {
   margin: auto;
-  max-width: 39rem;
+  max-width: 50rem;
   padding: 1rem;
   background-color: $white;
   color: $black;
   font-family: $sans;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 145%;
 }
 
 p {
   margin-bottom: 1.5rem;
   font-family: $serif;
-  font-size: 110%;
   line-height: 1.7;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1.2;
 }
 
@@ -51,14 +50,19 @@ hr {
   }
 }
 
+b, strong {
+  font-weight: 400;
+}
+
 blockquote {
   margin: 3rem 0;
+  padding-left: 15px;
+  border-left: 4px solid #e8e8e8;
 
   p {
-    color: $blue;
-    font: 300 1.5rem $sans;
+    font-style: italic;
+    color: #828282;
     line-height: 1.7;
-    text-align: center;
   }
 }
 
@@ -72,9 +76,7 @@ img, video {
 ol, ul {
   li {
     font-family: $serif;
-    font-size: 110%;
     line-height: 1.5;
-    margin-bottom: 1rem;
 
     & > p {
       font-size: 100%;
@@ -181,8 +183,8 @@ footer {
 
   &__head {
     color: $black;
-    font-size: 1.75rem;
-    font-weight: 700;
+    font-weight: 400;
+    font-size: 2.45rem;
   }
 
   &__sub {
@@ -227,25 +229,24 @@ footer {
 
   &__head {
     margin: 0;
-    font-size: 1.35rem;
-    font-family: sans-serif;
+    font-size: 1.15rem;
     font-weight: 500;
   }
 
   &__description {
     color: $gray;
     margin: .5rem 0;
-    font-size: 1.25rem;
+    font-size: 1.09rem;
   }
 }
 
 .section__title {
   margin-bottom: 0;
-  padding-bottom: 0.5rem;
+  padding-bottom: 0.7rem;
   border-bottom: 1px solid $gray-light;
   color: $green;
   font-size: 1.15rem;
-  font-weight: 700;
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -334,7 +335,6 @@ footer {
 
   &__date {
     color: $gray;
-    font-size: .8rem;
   }
 }
 
