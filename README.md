@@ -1,4 +1,4 @@
-## Code behind [zeeshanu.info](http://zeeshanu.info)
+## Code behind [ziishaned.info](http://ziishaned.info)
 
 [Jekyll](http://jekyllrb.com) based blog. Hosted on [GitHub Pages](https://pages.github.com) with blog posts written in [Kramdown](http://kramdown.gettalong.org/documentation.html).
 
