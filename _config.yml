@@ -1,12 +1,12 @@
-title: Zeeshan Ahmad
-description: "Software engineer at tajawal — tech guy with an entrepreneurial spirit and knack for getting things done"
+title: "Zeeshan Ahmad"
+description: "Software engineer at tajawal — PHP and Javascript fanatic, open source lover and tinkerer"
 url: "http://ziishaned.info"
 author: "Zeeshan Ahmad"
 keywords: "zeeshan,zeeshanahmadse,zeeshan ahmad,code,javascript,php,databases,entrepreneurship,startups,react,angular,javascript,docker,nodejs,laravel,lumen"
-github: ziishaned
-medium: ziishaned
-twitter: ziishaned
-email: ziishaned@gmail.com
+
+current_employer:
+  name: Tajawal
+  website: http://tajawal.com
 
 exclude: ["README.md", "CNAME", "LICENSE", ".gitignore"]
 include: ["résumé.pdf"]
@@ -38,19 +38,15 @@ defaults:
       layout: "base"
 
 about:
-  - name: Github
+  github:
     username: ziishaned
     url: https://github.com/ziishaned
-    class: github
-  - name: Medium
+  medium:
     username: ziishaned
     url: https://medium.com/@ziishaned
-    class: medium
-  - name: Twitter
+  twitter:
     username: ziishaned
     url: https://twitter.com/ziishaned
-    class: twitter
-  - name: Email
+  email:
     username: ziishaned@gmail.com
-    class: email
     url: mailto:ziishaned@gmail.com

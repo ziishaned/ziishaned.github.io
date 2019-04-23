@@ -4,7 +4,7 @@ comments: true
 ---
 
 <p align="center">
-<img src="https://i.imgur.com/bYwl7Vf.png" class="img-responsive" alt="Learn Regex">
+    <img src="https://i.imgur.com/bYwl7Vf.png" class="img-responsive" alt="Learn Regex">
 </p>
 
 ## What is Regular Expression?
@@ -21,7 +21,7 @@ characters in username so it does not look ugly. We use the following regular ex
 <br/><br/>
 
 <p align="center">
-<img src="https://i.imgur.com/ekFpQUg.png" class="img-responsive" alt="Regular expression">
+    <img src="https://i.imgur.com/ekFpQUg.png" class="img-responsive" alt="Regular expression">
 </p>
 
 Above regular expression can accept the strings `john_doe`, `jo-hn_doe` and `john12_as`. It does not match `Jo` because that string
