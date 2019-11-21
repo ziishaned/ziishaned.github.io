@@ -1,37 +1,45 @@
-*, *:before, *:after {
-  box-sizing: border-box;
-  text-rendering: optimizeLegibility;
+* {
+  margin: 0;
+  padding: 0;
 }
 
 body {
   margin: auto;
-  max-width: 50rem;
-  padding: 1rem;
-  background-color: $white;
   color: $black;
+  padding: 1rem;
+  font-size: 1rem;
+  max-width: 50rem;
+  font-weight: 400;
   font-family: $sans;
-  font-size: 16px;
-  line-height: 145%;
-}
-
-p {
-  margin-bottom: 1.5rem;
-  font-family: $serif;
-  line-height: 1.7;
+  line-height: 1.7rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
   line-height: 1.2;
+
+  code {
+    font-size: inherit;
+  }
 }
 
 a {
-  color: $gray;
+  color: $red;
+  text-decoration: none;
   transition: color .2s;
 
   &:hover {
-    color: $red;
+    color: $blue;
+    text-decoration: none;
   }
+}
+
+ul, ol {
+  margin-left: 1.8rem;
+}
+
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure, .highlight {
+  margin-bottom: 0.9rem;
 }
 
 hr {
@@ -50,19 +58,17 @@ hr {
   }
 }
 
-b, strong {
-  font-weight: 400;
-}
-
 blockquote {
-  margin: 3rem 0;
-  padding-left: 15px;
-  border-left: 4px solid #e8e8e8;
+  color: #828282;
+  border-left: 0.25rem solid $gray-light;
+  padding-left: 0.9rem;
+  letter-spacing: -1px;
+  font-style: italic;
 
   p {
-    font-style: italic;
-    color: #828282;
+    color: $gray;
     line-height: 1.7;
+    font-size: 1.1rem;
   }
 }
 
@@ -75,9 +81,6 @@ img, video {
 
 ol, ul {
   li {
-    font-family: $serif;
-    line-height: 1.5;
-
     & > p {
       font-size: 100%;
 
@@ -92,7 +95,6 @@ sup {
   a {
     border-bottom: 0;
     color: $gray;
-    font-family: $sans;
     text-decoration: none;
 
     &:hover {
@@ -104,7 +106,6 @@ sup {
 time {
   display: block;
   color: $gray;
-  font-family: $sans;
 }
 
 table {
@@ -116,7 +117,6 @@ table {
   overflow-x: auto;
   width: 100%;
   max-width: 100%;
-  font-family: $serif;
 
   tbody tr:nth-child(odd) {
     background-color: $white;
@@ -138,31 +138,35 @@ table {
   }
 
   td {
+    text-align: left;
     border-top: 1px solid $gray-light;
     border-left: 1px solid $gray-light;
-    text-align: left;
   }
 }
 
 .nav {
-  margin: 1rem 0 3rem;
   display: flex;
+  align-items: center;
+  margin: 4.5rem 0 3rem;
   justify-content: space-between;
-  font-size: .9rem;
 
-  a {
-    color: $gray;
-    text-decoration: none;
-    transition: color .25s;
+  .nav-brand {
+    color: $red;
+    font-weight: 300;
+    font-size: 1.6rem;
 
     &:hover {
       color: $blue;
     }
   }
 
-  &__right, &__left {
+  a {
+    text-decoration: none;
+  }
+
+  &__right {
     a {
-      margin-right: .5rem;
+      margin-right: .6rem;
 
       &:last-child {
         margin-right: 0;
@@ -174,157 +178,33 @@ table {
 footer {
   color: $gray;
   font-size: 0.9rem;
-  font-family: $sans;
   font-weight: 400;
-}
-
-.intro {
-  text-align: center;
-
-  &__head {
-    color: $black;
-    font-weight: 400;
-    font-size: 2.45rem;
-  }
-
-  &__sub {
-    margin-top: $l1;
-    color: $gray;
-    font-size: 1.35rem;
-    font-weight: 500;
-    line-height: 1.5;
-  }
-}
-
-.whoami {
-  color: $gray-light;
-  transition: color .25s;
-
-  &:hover {
-    color: $blue;
-  }
-}
-
-.about {
-  //display: flex;
-
-  &__image {
-    margin: 0;
-    display: block;
-    width: 35%;
-    height: 100%;
-
-    @media screen and (max-width: $sm) {
-      display: none;
-    }
-  }
-
-  &__content {
-    padding: 0 0 0 1rem;
-
-    @media screen and (max-width: $sm) {
-      padding: 0;
-    }
-  }
-
-  &__head {
-    margin: 0;
-    font-size: 1.15rem;
-    font-weight: 500;
-  }
-
-  &__description {
-    color: $gray;
-    margin: .5rem 0;
-    font-size: 1.09rem;
-  }
 }
 
 .section__title {
   margin-bottom: 0;
-  padding-bottom: 0.7rem;
-  border-bottom: 1px solid $gray-light;
-  color: $green;
-  font-size: 1.15rem;
+  font-size: 1.8rem;
   font-weight: 400;
-  font-style: normal;
-}
-
-.feature-list {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 1rem;
-
-  @media screen and (max-width: $sm) {
-    flex-direction: column;
-  }
-}
-
-.feature {
-  flex: 1;
-  display: block;
-  padding: 1rem;
-  text-decoration: none;
-
-  &__title {
-    font-size: 1.15rem;
-    font-weight: 700;
-  }
-
-  &__date {
-    font-size: .9rem;
-  }
-
-  &--light {
-    color: $white;
-  }
-
-  &--dark {
-    color: $black;
-  }
-
-  &:first-child {
-    margin-right: 1rem;
-  }
-
-  @media screen and (max-width: $sm) {
-    &:first-child {
-      margin-right: 0;
-      margin-bottom: 1rem;
-    }
-  }
-}
-
-#f-1 {
-  background: url(../img/new.png);
-  background-size: 100%;
-  background-position: top center;
-  background-repeat: no-repeat;
-  background-color: $gray-light;
-}
-
-#f-2 {
-  background: url(../img/roses.png);
-  background-size: 100%;
-  background-position: bottom center;
-  background-repeat: no-repeat;
-  background-color: $gray-light;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid $gray-light;
 }
 
 .post {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid $gray-light;
-  padding: 0.5rem 0;
   width: 100%;
-  font-family: $sans;
+  color: $red;
+  display: flex;
   font-size: .95rem;
-  color: $black;
+  padding: 0.5rem 0;
+  align-items: center;
   text-decoration: none;
-  transition: color .25s, padding-left .25s;
+  justify-content: space-between;
+  border-bottom: 1px solid $gray-light;
 
-  &:hover {
+  .post__title {
+    transition: padding-left .25s;
+  }
+
+  &:hover .post__title {
     color: $blue;
     padding-left: 1rem;
   }
@@ -335,10 +215,42 @@ footer {
 
   &__date {
     color: $gray;
+    font-size: .8rem;
   }
 }
 
-twitterwidget {
-  margin-left: auto !important;
-  margin-right: auto !important;
+article {
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.6rem;
+  }
+
+  h4 {
+    font-size: 1.2rem;
+  }
+
+  header {
+    h1 {
+      font-size: 2.2rem;
+      line-height: 2.8rem;
+      letter-spacing: -1px;
+      margin-bottom: 0.2rem;
+    }
+
+    time {
+      color: $gray;
+      font-size: 0.8rem;
+    }
+  }
+
+  a {
+    color: $red;
+
+    &:hover {
+      color: $blue;
+    }
+  }
 }
