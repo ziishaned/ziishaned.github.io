@@ -9,13 +9,11 @@ body {
   padding: 1rem;
   font-size: 1rem;
   max-width: 50rem;
-  font-weight: 400;
   font-family: $sans;
   line-height: 1.7rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 400;
   line-height: 1.2;
 
   code {
@@ -62,13 +60,10 @@ blockquote {
   color: #828282;
   border-left: 0.25rem solid $gray-light;
   padding-left: 0.9rem;
-  letter-spacing: -1px;
-  font-style: italic;
 
   p {
     color: $gray;
     line-height: 1.7;
-    font-size: 1.1rem;
   }
 }
 
@@ -152,7 +147,7 @@ table {
 
   .nav-brand {
     color: $red;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 1.6rem;
 
     &:hover {
@@ -178,13 +173,11 @@ table {
 footer {
   color: $gray;
   font-size: 0.9rem;
-  font-weight: 400;
 }
 
 .section__title {
   margin-bottom: 0;
   font-size: 1.8rem;
-  font-weight: 400;
   padding-bottom: 0.5rem;
   border-bottom: 1px solid $gray-light;
 }
