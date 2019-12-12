@@ -3,7 +3,7 @@ title: Handling errors in React using Error Boundary
 comments: true
 ---
 
-Error Boundary concept is introducted in React 16 to handle javascript errors and display a fallback UI.
+Error Boundary concept is introduced in React 16 to handle javascript errors and display a fallback UI.
 
 Create a new react application by running below command inside your terminal:
 
@@ -34,14 +34,14 @@ export function App() {
 }
 ```
 
-Lets see what happens if we create a build and serve the application from there:
+Let's see what happens if we create a build and serve the application from there:
 
 ```bash
 yarn run build
 serve -s build
 ```
 
-Upon running `serve` command a two URLs will appear inside your terminal open one of them inside your browser. If you keep pressing on the `Add` button it will increase the value of counter variable and after a while when counter values reaches 5 your application will become unresponsive and following will happen:
+Upon running `serve` command two URLs will appear inside your terminal open one of them inside your browser. If you keep pressing on the `Add` button it will increase the value of the counter variable and after a while when counter values reache 5 your application will become unresponsive and following will happen:
 
 ![Demo1](https://imgur.com/jSez3Ox.gif)
 
