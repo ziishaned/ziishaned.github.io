@@ -1,5 +1,5 @@
 ---
-title: Handleling errors in React using Error Boundary
+title: Handling errors in React using Error Boundary
 comments: true
 ---
 
